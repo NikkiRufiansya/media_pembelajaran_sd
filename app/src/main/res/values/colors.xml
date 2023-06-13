@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="gunmental">#2A2D34</color>
+    <color name="celestial_movie">#009DDC</color>
+    <color name="giants_orange">#F26430</color>
+    <color name="ultra_violet">#6761A8</color>
+    <color name="shamrock_green">#009B72</color>
 </resources>

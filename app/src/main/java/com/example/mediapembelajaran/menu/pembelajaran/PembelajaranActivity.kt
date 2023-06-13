@@ -3,9 +3,9 @@ package com.example.mediapembelajaran.menu.pembelajaran
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mediapembelajaran.R
+import com.example.mediapembelajaran.MainActivity
 import com.example.mediapembelajaran.adapter.PembelajaranAdapter
 import com.example.mediapembelajaran.databinding.ActivityPembelajaranBinding
 import com.example.mediapembelajaran.model.PembelajaranModels
@@ -20,6 +20,11 @@ class PembelajaranActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initData()
+
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
     }
 
     private fun initData(){
@@ -107,7 +112,7 @@ class PembelajaranActivity : AppCompatActivity() {
 
 
 
-        val layoutManager : RecyclerView.LayoutManager =  GridLayoutManager(this, 2)
+        val layoutManager : RecyclerView.LayoutManager =  LinearLayoutManager(this)
         binding.rvPembelajaran.layoutManager = layoutManager
         adapter = PembelajaranAdapter(this@PembelajaranActivity, pembelajaranList)
         adapter.setOnClick {

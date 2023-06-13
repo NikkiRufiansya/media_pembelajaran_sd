@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_kuis_7"
+    tools:context=".menu.kuis.Quiz7Activity">
+
+    <GridLayout
+        android:id="@+id/grid_question_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:rowCount="3"
+        android:columnCount="3"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:layout_marginLeft="@dimen/_70sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </GridLayout>
+
+    <ImageView
+        android:id="@+id/iv_plus"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_100sdp"
+
+        app:layout_constraintLeft_toRightOf="@id/grid_question_1"
+        android:src="@drawable/baseline_add_24"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"/>
+
+    <GridLayout
+        android:id="@+id/grid_question_2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:rowCount="3"
+        android:columnCount="3"
+        app:layout_constraintLeft_toRightOf="@id/iv_plus"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </GridLayout>
+
+    <ImageView
+        android:src="@drawable/equal"
+        android:id="@+id/equal"
+        android:layout_marginTop="@dimen/_120sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/grid_question_2"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/box"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_130sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:layout_constraintLeft_toRightOf="@id/equal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/gunmental"
+        app:strokeWidth="@dimen/_3sdp">
+
+        <GridLayout
+            android:layout_margin="@dimen/_5sdp"
+            android:id="@+id/grid_answer_box"
+            android:rowCount="3"
+            android:columnCount="3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </GridLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/grid_answer"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:layout_marginLeft="@dimen/_90sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_drag_1"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"/>
+
+        <ImageView
+            android:id="@+id/iv_drag_2"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"/>
+
+        <ImageView
+            android:id="@+id/iv_drag_3"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"/>
+
+
+        <ImageView
+            android:id="@+id/iv_drag_4"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"/>
+
+        <ImageView
+            android:id="@+id/iv_drag_5"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"/>
+
+        <ImageView
+            android:id="@+id/iv_drag_6"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"/>
+
+        <ImageView
+            android:id="@+id/iv_drag_7"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"/>
+
+        <ImageView
+            android:id="@+id/iv_drag_8"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"/>
+
+        <ImageView
+            android:id="@+id/iv_drag_9"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"/>
+
+        <ImageView
+            android:id="@+id/iv_drag_10"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_7"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

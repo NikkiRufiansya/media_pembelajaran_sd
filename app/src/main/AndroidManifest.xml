@@ -16,14 +16,67 @@
         android:theme="@style/Theme.MediaPembelajaran"
         tools:targetApi="31">
         <activity
-            android:name=".menu.kuis.Quiz1Activity"
+            android:name=".menu.kuis.Quiz10Activity"
+            android:screenOrientation="landscape"
             android:exported="false" />
         <activity
-            android:name=".menu.kuis.Query1Activity"
+            android:name=".menu.kuis.Quiz9Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".menu.kuis.Quiz8Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".menu.kuis.Quiz7Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".menu.kuis.Quiz6Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".menu.kuis.Quiz5Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".menu.kuis.Quiz4Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".menu.kuis.Quiz3Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".menu.kuis.Quiz2Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".auth.DaftarActivity"
             android:exported="false" />
+        <activity
+            android:name=".auth.LoginAkunActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.kuis.Quiz1Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".menu.kuis.QuizActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".menu.pembelajaran.DetailPembelajaran"
             android:exported="false" />
@@ -32,13 +85,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

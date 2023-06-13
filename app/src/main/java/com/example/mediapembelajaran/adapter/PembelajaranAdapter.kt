@@ -29,6 +29,7 @@ class PembelajaranAdapter(private var context: Context,private var pembelajaranM
         with(holder){
             with(pembelajaranModel[position]){
                 binding.tvTitle.text = this.title
+                binding.tvDesc.text = this.description
                 Glide.with(context).load(this.imageUrl).into(binding.ivThumbnail)
                 binding.cvPembelajaran.setOnClickListener {
                     onClick?.invoke(pembelajaranModel[position])

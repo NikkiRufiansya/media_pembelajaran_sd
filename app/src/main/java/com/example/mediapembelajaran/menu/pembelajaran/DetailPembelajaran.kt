@@ -37,19 +37,17 @@ class DetailPembelajaran : AppCompatActivity() {
         binding.tvToolbar.text = title
         binding.tvDec.text = desc
 
-        binding.webView.getSettings().setJavaScriptEnabled(true)
-        binding.webView.getSettings().setPluginState(PluginState.ON)
+        binding.webView.settings.setJavaScriptEnabled(true)
+
         binding.webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
-                view?.loadUrl(url.toString())
+                if (url != null) {
+                    view?.loadUrl(url)
+                }
                 return true
             }
         }
         binding.webView.loadUrl(videoUrl)
-        //binding.webView.loadUrl(videoUrl)
-        binding.webView.setWebChromeClient(WebChromeClient())
-
-
     }
 
 

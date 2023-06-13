@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auth.LoginActivity">
+
+    <ImageView
+        android:id="@+id/ilustraisi"
+        android:layout_marginTop="@dimen/_80sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/illustrasi"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_250sdp"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textSize="@dimen/_20ssp"
+        android:textColor="@color/gunmental"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ilustraisi"
+        android:text="Smart Academy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_login"
+        android:layout_marginTop="@dimen/_30sdp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:cardBackgroundColor="@color/ultra_violet"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_40sdp">
+        <TextView
+            android:textSize="@dimen/_14ssp"
+            android:text="Login"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_register"
+        android:layout_marginTop="@dimen/_30sdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        app:cardBackgroundColor="@color/shamrock_green"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_40sdp">
+        <TextView
+            android:textSize="@dimen/_14ssp"
+            android:text="Daftar"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_without_login"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        app:strokeWidth="0dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_register"
+        app:cardBackgroundColor="@color/celestial_movie"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp">
+        <TextView
+            android:textSize="@dimen/_14ssp"
+            android:text="Masuk tanpa login"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
