@@ -1,9 +1,11 @@
 package com.example.mediapembelajaran
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AlertDialog
 import com.example.mediapembelajaran.core.helper.Connection
 import com.example.mediapembelajaran.core.helper.SessionManager
 import com.example.mediapembelajaran.core.service.AuthService
@@ -95,5 +97,21 @@ class MainActivity : AppCompatActivity() {
                 }
             })
         }
+    }
+
+    override fun onBackPressed() {
+        val alertDialogBuilder = AlertDialog.Builder(this)
+        alertDialogBuilder.setTitle("Keluar dari Aplikasi")
+        alertDialogBuilder.setMessage("Apakah Anda yakin ingin keluar?")
+        alertDialogBuilder.setPositiveButton("Ya") { dialogInterface: DialogInterface, _: Int ->
+            // Menutup aplikasi
+            finish()
+        }
+        alertDialogBuilder.setNegativeButton("Tidak") { dialogInterface: DialogInterface, _: Int ->
+            // Mengabaikan tombol "Back"
+            dialogInterface.dismiss()
+        }
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
     }
 }

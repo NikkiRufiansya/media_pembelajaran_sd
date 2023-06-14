@@ -19,8 +19,10 @@ class SplashScreen : AppCompatActivity() {
         Handler().postDelayed({
             if(sessionManager.getIsLogin()){
                 startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }else{
                 startActivity(Intent(this, LoginActivity::class.java))
+                finish()
             }
         },3000)
 

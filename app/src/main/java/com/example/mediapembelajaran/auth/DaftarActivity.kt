@@ -50,6 +50,7 @@ class DaftarActivity : AppCompatActivity() {
                 month,
                 day
             )
+
             // at last we are calling show
             // to display our date picker dialog.
             datePickerDialog.show()
@@ -58,6 +59,10 @@ class DaftarActivity : AppCompatActivity() {
                 daftar()
             }
 
+            binding.btnBack1.setOnClickListener {
+                startActivity(Intent(this, LoginActivity::class.java))
+                finish()
+            }
         }
     }
 

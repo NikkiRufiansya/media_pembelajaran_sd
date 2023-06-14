@@ -8,6 +8,7 @@
         android:id="@+id/cv_pembelajaran"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white"
         android:layout_width="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:cardElevation="2dp"

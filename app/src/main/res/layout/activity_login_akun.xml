@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".auth.LoginAkunActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -46,7 +47,9 @@
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:background="@drawable/outline_edit_text"
         android:hint="Masukan Username"
+        android:textColor="@color/gunmental"
         android:padding="10dp"
+        android:textColorHint="@color/gunmental"
         app:layout_constraintTop_toBottomOf="@id/iv_ilustrasi" />
 
     <EditText
@@ -56,6 +59,8 @@
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_20sdp"
         android:inputType="textPassword"
+        android:textColor="@color/gunmental"
+        android:textColorHint="@color/gunmental"
         android:background="@drawable/outline_edit_text"
         android:hint="Masukan Password"
         android:padding="10dp"
