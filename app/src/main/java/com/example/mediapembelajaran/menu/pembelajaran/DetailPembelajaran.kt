@@ -1,5 +1,6 @@
 package com.example.mediapembelajaran.menu.pembelajaran
 
+import android.content.Intent
 import android.os.Bundle
 import android.webkit.WebChromeClient
 import android.webkit.WebResourceRequest
@@ -34,8 +35,13 @@ class DetailPembelajaran : AppCompatActivity() {
     }
 
     fun init(){
-        binding.tvToolbar.text = title
+        binding.tvToolbar.text = "Video Pembelajaran"
+        binding.tvTitle.text = title
         binding.tvDec.text = desc
+
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this@DetailPembelajaran, PembelajaranActivity::class.java))
+        }
 
         binding.webView.settings.setJavaScriptEnabled(true)
 

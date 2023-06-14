@@ -30,86 +30,174 @@ class PembelajaranActivity : AppCompatActivity() {
     private fun initData(){
         pembelajaranList.add(
             PembelajaranModels(
-                title = "Belajar Berhitung",
-                description = "Video edukasi untuk anak-anak yang ingin belajar berhitung atau belajar mengenal angka sambil bernyanyi dengan animasi yang menarik sehingga anak-anak akan lebih tertarik dan senang untuk belajar berhitung atau belajar mengenal angka, diiringi dengan musik dan lagu ceria yang mudah diingat oleh anak-anak. Untuk para orang tua yang ingin anaknya bisa belajar berhitung, silakan ditonton video ini, semoga anak-anak suka dengan video ini. Jangan lupa di like, share dan ditonton video-video lainnya di channel Hore Kids ini. Terima kasih",
-                imageUrl = "https://img.youtube.com/vi/KxKuWkUHSck/0.jpg",
-                videoUrl = "https://www.youtube.com/embed/KxKuWkUHSck?autoplay=1&vq=small"
+                title = "A B C - Bus Tayo Lagu belajar sambil bernyanyi terbaru Learn Toys Friends mobil balita",
+                description = "Video ini pembelajaran A B C - Bus Tayo Lagu belajar sambil bernyanyi terbaru Learn Toys Friends mobil balita",
+                imageUrl = "https://img.youtube.com/vi/iRC6QBcqn7M/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/iRC6QBcqn7M?autoplay=1&vq=small"
             )
         )
 
         pembelajaranList.add(
             PembelajaranModels(
-                title = "Belajar Berhitung",
-                description = "Video edukasi untuk anak-anak yang ingin belajar berhitung atau belajar mengenal angka sambil bernyanyi dengan animasi yang menarik sehingga anak-anak akan lebih tertarik dan senang untuk belajar berhitung atau belajar mengenal angka, diiringi dengan musik dan lagu ceria yang mudah diingat oleh anak-anak. Untuk para orang tua yang ingin anaknya bisa belajar berhitung, silakan ditonton video ini, semoga anak-anak suka dengan video ini. Jangan lupa di like, share dan ditonton video-video lainnya di channel Hore Kids ini. Terima kasih",
-                imageUrl = "https://img.youtube.com/vi/KxKuWkUHSck/0.jpg",
-                videoUrl = "https://www.youtube.com/embed/KxKuWkUHSck?autoplay=1&vq=small"
+                title = "Belajar angka dan berhitung untuk anak-anak ",
+                description = "Video Belajar Berhitung angka 1-50 bersama upin ipin",
+                imageUrl = "https://img.youtube.com/vi/0fNeeYcTwJI/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/0fNeeYcTwJI?autoplay=1&vq=small"
             )
         )
 
         pembelajaranList.add(
             PembelajaranModels(
-                title = "Belajar Berhitung",
-                description = "Video edukasi untuk anak-anak yang ingin belajar berhitung atau belajar mengenal angka sambil bernyanyi dengan animasi yang menarik sehingga anak-anak akan lebih tertarik dan senang untuk belajar berhitung atau belajar mengenal angka, diiringi dengan musik dan lagu ceria yang mudah diingat oleh anak-anak. Untuk para orang tua yang ingin anaknya bisa belajar berhitung, silakan ditonton video ini, semoga anak-anak suka dengan video ini. Jangan lupa di like, share dan ditonton video-video lainnya di channel Hore Kids ini. Terima kasih",
-                imageUrl = "https://img.youtube.com/vi/KxKuWkUHSck/0.jpg",
-                videoUrl = "https://www.youtube.com/embed/KxKuWkUHSck?autoplay=1&vq=small"
+                title = "Belajar Mengenal Angka",
+                description = "Video Belajar Mengenal Angka",
+                imageUrl = "https://img.youtube.com/vi/uuO7e4Qg8vY/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/uuO7e4Qg8vY?autoplay=1&vq=small"
             )
         )
 
         pembelajaranList.add(
             PembelajaranModels(
-                title = "Belajar Berhitung",
-                description = "Video edukasi untuk anak-anak yang ingin belajar berhitung atau belajar mengenal angka sambil bernyanyi dengan animasi yang menarik sehingga anak-anak akan lebih tertarik dan senang untuk belajar berhitung atau belajar mengenal angka, diiringi dengan musik dan lagu ceria yang mudah diingat oleh anak-anak. Untuk para orang tua yang ingin anaknya bisa belajar berhitung, silakan ditonton video ini, semoga anak-anak suka dengan video ini. Jangan lupa di like, share dan ditonton video-video lainnya di channel Hore Kids ini. Terima kasih",
-                imageUrl = "https://img.youtube.com/vi/KxKuWkUHSck/0.jpg",
-                videoUrl = "https://www.youtube.com/embed/KxKuWkUHSck?autoplay=1&vq=small"
+                title = "KONSEP PEMBAGIAN KELAS 2",
+                description = "Video Belajar Mengenal Pembagian",
+                imageUrl = "https://img.youtube.com/vi/W2ZRiaZrSe0/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/W2ZRiaZrSe0?autoplay=1&vq=smalll"
             )
         )
 
         pembelajaranList.add(
             PembelajaranModels(
-                title = "Belajar Berhitung",
-                description = "Video edukasi untuk anak-anak yang ingin belajar berhitung atau belajar mengenal angka sambil bernyanyi dengan animasi yang menarik sehingga anak-anak akan lebih tertarik dan senang untuk belajar berhitung atau belajar mengenal angka, diiringi dengan musik dan lagu ceria yang mudah diingat oleh anak-anak. Untuk para orang tua yang ingin anaknya bisa belajar berhitung, silakan ditonton video ini, semoga anak-anak suka dengan video ini. Jangan lupa di like, share dan ditonton video-video lainnya di channel Hore Kids ini. Terima kasih",
-                imageUrl = "https://img.youtube.com/vi/KxKuWkUHSck/0.jpg",
-                videoUrl = "https://www.youtube.com/embed/KxKuWkUHSck?autoplay=1&vq=small"
+                title = "Mengenal Bentuk Bangun Ruang",
+                description = "video pembelajaran ini berisikan materi tentang Mengenal Bentuk Bangun Ruang.",
+                imageUrl = "https://img.youtube.com/vi/TPy8zfIVZ5w/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/TPy8zfIVZ5w/?autoplay=1&vq=small"
             )
         )
 
         pembelajaranList.add(
             PembelajaranModels(
-                title = "Belajar Berhitung",
-                description = "Video edukasi untuk anak-anak yang ingin belajar berhitung atau belajar mengenal angka sambil bernyanyi dengan animasi yang menarik sehingga anak-anak akan lebih tertarik dan senang untuk belajar berhitung atau belajar mengenal angka, diiringi dengan musik dan lagu ceria yang mudah diingat oleh anak-anak. Untuk para orang tua yang ingin anaknya bisa belajar berhitung, silakan ditonton video ini, semoga anak-anak suka dengan video ini. Jangan lupa di like, share dan ditonton video-video lainnya di channel Hore Kids ini. Terima kasih",
-                imageUrl = "https://img.youtube.com/vi/KxKuWkUHSck/0.jpg",
-                videoUrl = "https://www.youtube.com/embed/KxKuWkUHSck?autoplay=1&vq=small"
+                title = "Bangun Datar dan Bangun Ruang Kelas 2 SD",
+                description = "Video ini untuk mengenal dan tahu ciri-ciri Bangun Datar dan Bangun Ruang.",
+                imageUrl = "https://img.youtube.com/vi/X8JKU6A0kG0/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/X8JKU6A0kG0/?autoplay=1&vq=small"
             )
         )
 
         pembelajaranList.add(
             PembelajaranModels(
-                title = "Belajar Berhitung",
-                description = "Video edukasi untuk anak-anak yang ingin belajar berhitung atau belajar mengenal angka sambil bernyanyi dengan animasi yang menarik sehingga anak-anak akan lebih tertarik dan senang untuk belajar berhitung atau belajar mengenal angka, diiringi dengan musik dan lagu ceria yang mudah diingat oleh anak-anak. Untuk para orang tua yang ingin anaknya bisa belajar berhitung, silakan ditonton video ini, semoga anak-anak suka dengan video ini. Jangan lupa di like, share dan ditonton video-video lainnya di channel Hore Kids ini. Terima kasih",
-                imageUrl = "https://img.youtube.com/vi/KxKuWkUHSck/0.jpg",
-                videoUrl = "https://www.youtube.com/embed/KxKuWkUHSck?autoplay=1&vq=small"
+                title = "UPIN IPIN | MENGHAFAL PERKALIAN 1-10 DENGAN LAGU",
+                description = "Video ini Berisi Menghafal Perkalian sangat penting. Perkalian adalah kunci keberhasilan dalam Matematika.",
+                imageUrl = "https://img.youtube.com/vi/WxLIdIPcrwg/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/WxLIdIPcrwg?autoplay=1&vq=smalll"
             )
         )
 
         pembelajaranList.add(
             PembelajaranModels(
-                title = "Belajar Berhitung",
-                description = "Video edukasi untuk anak-anak yang ingin belajar berhitung atau belajar mengenal angka sambil bernyanyi dengan animasi yang menarik sehingga anak-anak akan lebih tertarik dan senang untuk belajar berhitung atau belajar mengenal angka, diiringi dengan musik dan lagu ceria yang mudah diingat oleh anak-anak. Untuk para orang tua yang ingin anaknya bisa belajar berhitung, silakan ditonton video ini, semoga anak-anak suka dengan video ini. Jangan lupa di like, share dan ditonton video-video lainnya di channel Hore Kids ini. Terima kasih",
-                imageUrl = "https://img.youtube.com/vi/KxKuWkUHSck/0.jpg",
-                videoUrl = "https://www.youtube.com/embed/KxKuWkUHSck?autoplay=1&vq=small"
+                title = "VIDEO ANIMASI PEMBELAJARAN MATEMATIKA ( SOAL CERITA PERKALIAN - KELAS 2 )",
+                description = "VIDEO ANIMASI PEMBELAJARAN MATEMATIKA ( SOAL CERITA PERKALIAN - KELAS 2 ) Pada video ini, ibu mengajarkan bagaimana cara memahami dan menyelesaikan soal cerita perkalian. Semoga video ini bisa bermanfaat untuk belajar anak-anak",
+                imageUrl = "https://img.youtube.com/vi/26SV2VBQizQ/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/26SV2VBQizQ?autoplay=1&vq=small"
             )
         )
 
         pembelajaranList.add(
             PembelajaranModels(
-                title = "Belajar Berhitung",
-                description = "Video edukasi untuk anak-anak yang ingin belajar berhitung atau belajar mengenal angka sambil bernyanyi dengan animasi yang menarik sehingga anak-anak akan lebih tertarik dan senang untuk belajar berhitung atau belajar mengenal angka, diiringi dengan musik dan lagu ceria yang mudah diingat oleh anak-anak. Untuk para orang tua yang ingin anaknya bisa belajar berhitung, silakan ditonton video ini, semoga anak-anak suka dengan video ini. Jangan lupa di like, share dan ditonton video-video lainnya di channel Hore Kids ini. Terima kasih",
-                imageUrl = "https://img.youtube.com/vi/KxKuWkUHSck/0.jpg",
-                videoUrl = "https://www.youtube.com/embed/KxKuWkUHSck?autoplay=1&vq=small"
+                title = "Cara Membaca Jam - Materi Pembelajaran Kelas 2 SD",
+                description = "Halo anak - anak, Video pertama ini saya akan membagikan bagaimana cara membaca jam dan penulisan secara baik dan benar. Belajar membaca jam sangat penting untuk di pelajari, khususnya anak - anak yang masih bingung membaca jam. Mudah mudahan dengan adanya video pembelajaran ini anak - anak lebih mudah membaca jam.",
+                imageUrl = "https://img.youtube.com/vi/wlkup6RYGAM/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/wlkup6RYGAM?autoplay=1&vq=smalll"
             )
         )
 
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "KELAS 2 - SATUAN PANJANG",
+                description = "Video ini berisi untuk mengenal satuan panjang dalam suatu tempat dan benda di sekitar.",
+                imageUrl = "https://img.youtube.com/vi/feu1DIeXT_Y/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/feu1DIeXT_Y?autoplay=1&vq=smalll"
+            )
+        )
 
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "Lagu Satuan Berat Mupel Matematika Kelas 2 SD Tema 6",
+                description = "Video ini berisi tentang lagu Kalau Kau Suka Hati dengan lirik satuan berat, memudahkan siswa menghafal satuan berat.",
+                imageUrl = "https://img.youtube.com/vi/1usUa2fc144/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/1usUa2fc144?autoplay=1&vq=smallll"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "MENGUKUR BERAT BENDA KILOGRAM DAN ONS KELAS 2 SD",
+                description = "Video ini berisi tentang mengukur berat benda Kilogram dan Ons kelas 2 dalam bentuk animasi",
+                imageUrl = "https://img.youtube.com/vi/26SV2VBQizQ/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/IvycS1Qsdq8?autoplay=1&vq=small"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "MENGENAL SATUAN WAKTU KELAS 2 SD || Jam, Hari, Minggu, Bulan",
+                description = "Video matematika mengenal satuan waktu merupakan materi untuk anak kelas 2 SD. Di dalam video ini dijelaskan konversi waktu jam dan  hari, hari dan minggu, serta hari dan bulan.",
+                imageUrl = "https://img.youtube.com/vi/TlhlLySucAc/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/IvycS1Qsdq8?autoplay=1&vq=smallll"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "MENGENAL PECAHAN DARI SEKELOMPOK BENDA || PART 2",
+                description = "video kali ini kita akan belajar matematika tentang mengenal pecahan dari sekelompok benda",
+                imageUrl = "https://img.youtube.com/vi/IVPplPg2taA/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/IVPplPg2taA?autoplay=1&vq=smallll"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "MENGENAL PEMBAGIAN - Matematika Kelas 2 SD",
+                description = "Di video ini diajarkan konsep pembagian sebagai pengurangan berulang. Di video ini juga ada latihan soal pembagian.",
+                imageUrl = "https://img.youtube.com/vi/dzeN4JQG71o/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/dzeN4JQG71o?autoplay=1&vq=small"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "PENJUMLAHAN BERSUSUN - Cara Panjang dan Cara Pendek",
+                description = "video kali ini kita akan belajar matematika penjumlahan bersusun. Penjumlahan bersusun cara panjang dan penjumlahan bersusun cara pendek. Di video ini kita juga latihan soal penjumlahan bersusun.",
+                imageUrl = "https://img.youtube.com/vi/ovCBfF0x11E/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/ovCBfF0x11E?autoplay=1&vq=smallll"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "Pembagian dengan Cara Pengurangan Berulang - Kelas 2 SD",
+                description = "Video ini berisi tentang pembagian dengan cara pengurangan berulang dengan Tema Bermain di Lingkunganku",
+                imageUrl = "https://img.youtube.com/vi/qHl_U87-SFw/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/qHl_U87-SFw?autoplay=1&vq=smallll"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "Pecahan | Matematika SD",
+                description = "video kali ini kita akan belajar tentang bilangan pecahan dan bentuk-bentuk pecahan.",
+                imageUrl = "https://img.youtube.com/vi/0hPRfqPFtt8/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/0hPRfqPFtt8?autoplay=1&vq=small"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "Lagu Mengenal Bangun Datar",
+                description = "Video ini berisi tentang lagu mengenal bangun datar. Musik dari Karaoke Pak Mul Musik",
+                imageUrl = "https://img.youtube.com/vi/pd2IRQVFiM8/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/pd2IRQVFiM8?autoplay=1&vq=small"
+            )
+        )
 
 
         val layoutManager : RecyclerView.LayoutManager =  LinearLayoutManager(this)

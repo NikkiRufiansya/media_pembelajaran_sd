@@ -37,12 +37,13 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/tv_banner"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14ssp"
-                android:text="Hai, Selamat Datang\n\nPengguna"
+                android:text="Hai, Selamat Datang\n\nGuest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -126,7 +127,7 @@
         app:strokeWidth="0dp"
         android:layout_marginBottom="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:cardBackgroundColor="@color/gunmental"
+        app:cardBackgroundColor="#A30000"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp">
         <TextView
