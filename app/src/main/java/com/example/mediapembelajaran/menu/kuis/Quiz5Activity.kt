@@ -129,6 +129,10 @@ class Quiz5Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount1 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -201,6 +205,10 @@ class Quiz5Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount2 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -272,6 +280,10 @@ class Quiz5Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount3 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -343,6 +355,10 @@ class Quiz5Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount4 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -415,6 +431,10 @@ class Quiz5Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount5 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -486,6 +506,10 @@ class Quiz5Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount6 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -558,6 +582,10 @@ class Quiz5Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount7 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -630,6 +658,10 @@ class Quiz5Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount8 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -701,6 +733,10 @@ class Quiz5Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount9 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -710,7 +746,6 @@ class Quiz5Activity : AppCompatActivity() {
 
         binding.gridAnswerBox?.setOnDragListener(dragListener)
     }
-
 
     fun drag10(){
         binding.ivDrag10?.setOnLongClickListener {
@@ -773,6 +808,10 @@ class Quiz5Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount10 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 

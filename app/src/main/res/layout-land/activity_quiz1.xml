@@ -13,7 +13,7 @@
         android:id="@+id/iv_question_1"
         android:layout_width="@dimen/_60sdp"
         android:layout_height="@dimen/_60sdp"
-        android:layout_marginLeft="@dimen/_100sdp"
+        android:layout_marginLeft="@dimen/_120sdp"
         android:layout_marginTop="@dimen/_40sdp"
         android:src="@drawable/ic_smartphone"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -76,61 +76,63 @@
     </com.google.android.material.card.MaterialCardView>
 
 
-    <LinearLayout
+    <GridLayout
         app:layout_constraintTop_toBottomOf="@id/box"
         android:id="@+id/grid_answer"
-        android:columnCount="5"
-        android:rowCount="4"
-        android:orientation="horizontal"
         android:layout_marginLeft="@dimen/_120sdp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="@dimen/_250sdp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="2">
 
-       <View
-           android:id="@+id/iv_drag_1"
-           android:layout_row="0"
-           android:layout_column="0"
-           android:layout_marginRight="@dimen/_5sdp"
-           android:background="@drawable/ic_smartphone"
-           android:layout_width="@dimen/_40sdp"
-           android:layout_height="@dimen/_40sdp"/>
+        <ImageButton
+            android:id="@+id/iv_drag_1"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="@drawable/ic_smartphone"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"/>
 
-        <View
+        <ImageButton
             android:id="@+id/iv_drag_2"
-            android:layout_row="0"
             android:layout_column="1"
+            android:layout_row="0"
             android:layout_marginRight="@dimen/_5sdp"
             android:background="@drawable/ic_smartphone"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"/>
 
-        <View
+        <ImageButton
             android:id="@+id/iv_drag_3"
-            android:layout_row="0"
             android:layout_column="2"
+            android:layout_row="0"
             android:layout_marginRight="@dimen/_5sdp"
             android:background="@drawable/ic_smartphone"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"/>
 
-        <View
+        <ImageButton
             android:id="@+id/iv_drag_4"
-            android:layout_row="0"
-            android:layout_column="3"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginRight="@dimen/_5sdp"
             android:background="@drawable/ic_smartphone"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"/>
 
-        <View
+        <ImageButton
             android:id="@+id/iv_drag_5"
-            android:layout_row="0"
-            android:layout_column="4"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginRight="@dimen/_5sdp"
             android:background="@drawable/ic_smartphone"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"/>
-    </LinearLayout>
+    </GridLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

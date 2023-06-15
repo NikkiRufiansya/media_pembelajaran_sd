@@ -113,6 +113,10 @@ class Quiz1Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount1 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -187,6 +191,10 @@ class Quiz1Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount2 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -257,6 +265,10 @@ class Quiz1Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount3 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -326,6 +338,10 @@ class Quiz1Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount4 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -351,6 +367,7 @@ class Quiz1Activity : AppCompatActivity() {
         val dragListener = View.OnDragListener { v, event ->
             when (event.action) {
                 DragEvent.ACTION_DRAG_STARTED -> {
+
                     event.clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)
                 }
 
@@ -373,10 +390,12 @@ class Quiz1Activity : AppCompatActivity() {
 
                     v.invalidate()
 
+
                     val view = event.localState as View
                     val owner = view.parent as ViewGroup
                     owner.removeView(view)
 
+                    view.visibility = View.GONE
                     val destination = v as GridLayout
                     destination.addView(view)
 
@@ -389,12 +408,18 @@ class Quiz1Activity : AppCompatActivity() {
                     }
 
 
+
+
                     checkAllDropsCompleted()
                     true
                 }
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount5 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 

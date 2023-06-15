@@ -4,12 +4,14 @@ import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import com.example.mediapembelajaran.core.helper.Connection
 import com.example.mediapembelajaran.core.helper.SessionManager
 import com.example.mediapembelajaran.core.service.AuthService
 import com.example.mediapembelajaran.databinding.ActivityMainBinding
+import com.example.mediapembelajaran.menu.kuis.IntoQuizActivity
 import com.example.mediapembelajaran.menu.kuis.Quiz10Activity
 import com.example.mediapembelajaran.menu.kuis.Quiz1Activity
 import com.example.mediapembelajaran.menu.kuis.Quiz2Activity
@@ -34,6 +36,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var authService: AuthService
     lateinit var connection: Connection
     var username = ""
+
+    private var backPressedOnce = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -51,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnKuis.setOnClickListener {
-            startActivity(Intent(this, Quiz1Activity::class.java))
+            startActivity(Intent(this, IntoQuizActivity::class.java))
         }
 
         binding.btnLogout.setOnClickListener {
@@ -100,6 +104,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+        if (backPressedOnce) {
+            super.onBackPressed()
+            return
+        }
+
+        this.backPressedOnce = true
+        showExitDialog()
+
+        // Reset backPressedOnce setelah 2 detik
+        Handler().postDelayed({
+            backPressedOnce = false
+        }, 2000)
+    }
+    private fun showExitDialog() {
         val alertDialogBuilder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle("Keluar dari Aplikasi")
         alertDialogBuilder.setMessage("Apakah Anda yakin ingin keluar?")
@@ -110,6 +128,7 @@ class MainActivity : AppCompatActivity() {
         alertDialogBuilder.setNegativeButton("Tidak") { dialogInterface: DialogInterface, _: Int ->
             // Mengabaikan tombol "Back"
             dialogInterface.dismiss()
+            backPressedOnce = false // Reset backPressedOnce saat tombol "Tidak" ditekan
         }
         val alertDialog = alertDialogBuilder.create()
         alertDialog.show()

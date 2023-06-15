@@ -134,117 +134,132 @@
         <GridLayout
             android:layout_margin="@dimen/_5sdp"
             android:id="@+id/grid_answer_box"
-            android:rowCount="5"
-            android:columnCount="5"
+            android:rowCount="6"
+            android:columnCount="6"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </GridLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
-    <LinearLayout
+    <GridLayout
         android:layout_marginLeft="@dimen/_50sdp"
         app:layout_constraintTop_toBottomOf="@id/box"
         android:id="@+id/grid_answer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:rowCount="6"
+        android:columnCount="6">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_drag_1"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-            <ImageView
-                android:id="@+id/iv_drag_1"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
+        <ImageView
+            android:id="@+id/iv_drag_2"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-            <ImageView
-                android:id="@+id/iv_drag_2"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
+        <ImageView
+            android:id="@+id/iv_drag_3"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-            <ImageView
-                android:id="@+id/iv_drag_3"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
+        <ImageView
+            android:id="@+id/iv_drag_4"
+            android:layout_column="3"
+            android:layout_row="0"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-            <ImageView
-                android:id="@+id/iv_drag_4"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
+        <ImageView
+            android:id="@+id/iv_drag_5"
+            android:layout_column="4"
+            android:layout_row="0"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-            <ImageView
-                android:id="@+id/iv_drag_5"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
+        <ImageView
+            android:id="@+id/iv_drag_6"
+            android:layout_column="5"
+            android:layout_row="0"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-            <ImageView
-                android:id="@+id/iv_drag_6"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/iv_drag_7"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_drag_8"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-            <ImageView
-                android:id="@+id/iv_drag_7"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
+        <ImageView
+            android:id="@+id/iv_drag_9"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-            <ImageView
-                android:id="@+id/iv_drag_8"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
+        <ImageView
+            android:id="@+id/iv_drag_10"
+            android:layout_column="3"
+            android:layout_row="1"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-            <ImageView
-                android:id="@+id/iv_drag_9"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
+        <ImageView
+            android:id="@+id/iv_drag_11"
+            android:layout_column="4"
+            android:layout_row="1"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-            <ImageView
-                android:id="@+id/iv_drag_10"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
+        <ImageView
+            android:id="@+id/iv_drag_12"
+            android:layout_column="5"
+            android:layout_row="1"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_kuis_2" />
 
-            <ImageView
-                android:id="@+id/iv_drag_11"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
-
-            <ImageView
-                android:id="@+id/iv_drag_12"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:src="@drawable/ic_kuis_2" />
-        </LinearLayout>
-
-    </LinearLayout>
+    </GridLayout>
 
 
 

@@ -13,13 +13,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.MediaPembelajaran"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".menu.kuis.Quiz10Activity"
+            android:name=".menu.kuis.IntoQuizActivity"
             android:screenOrientation="landscape"
             android:exported="false" />
+        <activity
+            android:name=".menu.kuis.Quiz10Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".menu.kuis.Quiz9Activity"
             android:exported="false"

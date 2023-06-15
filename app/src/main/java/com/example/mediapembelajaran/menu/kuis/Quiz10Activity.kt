@@ -64,7 +64,6 @@ class Quiz10Activity : AppCompatActivity() {
         drag10()
 
     }
-
     fun drag1(){
         binding.ivDrag1?.setOnLongClickListener {
             val clipText = "Terisi"
@@ -127,6 +126,10 @@ class Quiz10Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount1 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -199,6 +202,10 @@ class Quiz10Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount2 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -270,6 +277,10 @@ class Quiz10Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount3 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -341,6 +352,10 @@ class Quiz10Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount4 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -413,6 +428,10 @@ class Quiz10Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount5 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -484,6 +503,10 @@ class Quiz10Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount6 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -556,6 +579,10 @@ class Quiz10Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount7 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -628,6 +655,10 @@ class Quiz10Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount8 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -699,6 +730,10 @@ class Quiz10Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount9 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
@@ -770,6 +805,10 @@ class Quiz10Activity : AppCompatActivity() {
 
                 DragEvent.ACTION_DRAG_ENDED -> {
                     v.invalidate()
+                    val view = event.localState as View
+                    if (!event.result || dropCount10 < 1) {
+                        view.visibility = View.VISIBLE
+                    }
                     true
                 }
 
