@@ -21,6 +21,15 @@ class SessionManager(context: Context) {
         return sharedPreferences.getBoolean(IS_LOGIN, false)
     }
 
+    fun setUsername(username: String){
+        editor.putString("username",username)
+        editor.commit()
+    }
+
+    fun getUserName(): String{
+        return  sharedPreferences.getString("username", "").toString()
+    }
+
     fun logoutUser(){
         editor.clear()
         editor.commit()

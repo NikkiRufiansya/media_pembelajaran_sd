@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
     lateinit var retrofit: Retrofit
-    var baseUrl = "http://192.168.130.132/media-pembelajaran/"
+    var baseUrl = "https://www.ptsamudratiajayagroup.com/media-pembelajaran/"
 
     fun getClient(activity: Activity): Retrofit {
         var  interceptor : HttpLoggingInterceptor = HttpLoggingInterceptor()

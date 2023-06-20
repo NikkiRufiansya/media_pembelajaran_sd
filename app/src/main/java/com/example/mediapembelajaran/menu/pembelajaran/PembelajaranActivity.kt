@@ -3,6 +3,7 @@ package com.example.mediapembelajaran.menu.pembelajaran
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mediapembelajaran.MainActivity
@@ -14,20 +15,58 @@ class PembelajaranActivity : AppCompatActivity() {
     lateinit var binding: ActivityPembelajaranBinding
     lateinit var adapter: PembelajaranAdapter
     var pembelajaranList: ArrayList<PembelajaranModels> = ArrayList()
+    var tema = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPembelajaranBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        tema = intent.getStringExtra("tema").toString()
+        Log.d("TAG", "Tema  -->: " + tema)
 
-        initData()
+        init(tema)
 
         binding.btnBack.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, MateriActivity::class.java))
             finish()
         }
     }
 
-    private fun initData(){
+    private fun init(tema: String){
+        when (tema) {
+            "tema1" -> {
+                dataTema1()
+            }
+            "tema2" -> {
+                dataTema2()
+            }
+            "tema3" -> {
+                dataTema3()
+            }
+            "tema4" -> {
+                dataTema4()
+            }
+            "tema5" -> {
+                dataTema5()
+            }
+        }
+
+        val layoutManager : RecyclerView.LayoutManager =  LinearLayoutManager(this)
+        binding.rvPembelajaran.layoutManager = layoutManager
+        adapter = PembelajaranAdapter(this@PembelajaranActivity, pembelajaranList)
+        adapter.setOnClick {
+            val intent = Intent(this, DetailPembelajaran::class.java)
+            intent.putExtra("title", it.title)
+            intent.putExtra("description", it.description)
+            intent.putExtra("imageUrl", it.imageUrl)
+            intent.putExtra("videoUrl", it.videoUrl)
+            intent.putExtra("tema", tema)
+            startActivity(intent)
+        }
+        binding.rvPembelajaran.adapter = adapter
+
+    }
+
+    fun dataTema1(){
         pembelajaranList.add(
             PembelajaranModels(
                 title = "A B C - Bus Tayo Lagu belajar sambil bernyanyi terbaru Learn Toys Friends mobil balita",
@@ -90,7 +129,10 @@ class PembelajaranActivity : AppCompatActivity() {
                 videoUrl = "https://www.youtube.com/embed/WxLIdIPcrwg?autoplay=1&vq=smalll"
             )
         )
+    }
 
+
+    fun dataTema2(){
         pembelajaranList.add(
             PembelajaranModels(
                 title = "VIDEO ANIMASI PEMBELAJARAN MATEMATIKA ( SOAL CERITA PERKALIAN - KELAS 2 )",
@@ -144,7 +186,9 @@ class PembelajaranActivity : AppCompatActivity() {
                 videoUrl = "https://www.youtube.com/embed/IvycS1Qsdq8?autoplay=1&vq=smallll"
             )
         )
+    }
 
+    fun dataTema3(){
         pembelajaranList.add(
             PembelajaranModels(
                 title = "MENGENAL PECAHAN DARI SEKELOMPOK BENDA || PART 2",
@@ -198,21 +242,82 @@ class PembelajaranActivity : AppCompatActivity() {
                 videoUrl = "https://www.youtube.com/embed/pd2IRQVFiM8?autoplay=1&vq=small"
             )
         )
+    }
 
+    fun dataTema4(){
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "RUAS GARIS BANGUN DATAR KELAS 2 TEMA 4 SUBTEMA 1 PEMBELAJARAN 1",
+                description = "Hallo semuanya, Berjumpa lagi di channel Nisfi Anisah, channelnya pembelajaran sekolah dasar. Pada kesempatan ini, saya ingin berbagi pembelajaran ruas garis bangun datar kelas 2 tema 4 subtema 1 pembelajaran 1. Materi pembelajaran ruas garis bangun datar, diambil dari buku tematik kelas 2 kurikulum 2013. Semoga dengan adanya video pembelajaran sekolah dasar ini dapat memudahkan bapak ibu guru, orangtua dan peserta didik kelas 2 dalam memahami materi ruas garis bangun datar kelas 2.",
+                imageUrl = "https://img.youtube.com/vi/d81JgAQUqTE/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/d81JgAQUqTE?autoplay=1&vq=small"
+            )
+        )
 
-        val layoutManager : RecyclerView.LayoutManager =  LinearLayoutManager(this)
-        binding.rvPembelajaran.layoutManager = layoutManager
-        adapter = PembelajaranAdapter(this@PembelajaranActivity, pembelajaranList)
-        adapter.setOnClick {
-            val intent = Intent(this, DetailPembelajaran::class.java)
-            intent.putExtra("title", it.title)
-            intent.putExtra("description", it.description)
-            intent.putExtra("imageUrl", it.imageUrl)
-            intent.putExtra("videoUrl", it.videoUrl)
-            startActivity(intent)
-        }
-        binding.rvPembelajaran.adapter = adapter
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "Video Pembelajaran Matematika Kelas 2 Tema 4 Subtema 2",
+                description = "Video pembelajaran matematika kelas 2 tema 4 subtema 2 Mengelompokkan bangun datar / Kelas 2 tema 4 subtema 1 pembelajaran 1",
+                imageUrl = "https://img.youtube.com/vi/MZywmzGOKfY/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/MZywmzGOKfY?autoplay=1&vq=small"
+            )
+        )
 
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "Video Pembelajaran Matematika Kelas 2 Tema 4 Subtema 3",
+                description = "Video Pembelajaran Matematika Kelas 2 Tema 4 Hidup bersih dan sehat Subtema 3 Hidup bersih dan sehat di tempat bermain Video Pembelajaran Matematika Kelas 2 Tema 4 Subtema 3 Ruas garis pada bangun ruang",
+                imageUrl = "https://img.youtube.com/vi/1HiTqUQTjwE/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/1HiTqUQTjwE?autoplay=1&vq=small"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "Video Pembelajaran Matematika Kelas 2 Tema 4 Subtema 4",
+                description = "Video Pembelajaran Matematika Kelas 2 Tema 4 Hidup bersih dan sehat Subtema 4 Hidup bersih dan sehat di tempat umum Video Pembelajaran Matematika Kelas 2 Tema 4 Subtema 4 Unsur unsur bangun ruang",
+                imageUrl = "https://img.youtube.com/vi/1NDChiV59WU/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/1NDChiV59WU?autoplay=1&vq=small"
+            )
+        )
+    }
+
+    fun dataTema5(){
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "Video Pembelajaran Matematika Kelas 2 Tema 5 Subtema 1",
+                description = "Video Pembelajaran Matematika Kelas 2 Tema 5 Subtema 1 Alat ukur panjang baku Kelas 2 tema 5 subtema 1 pembelajaran 1",
+                imageUrl = "https://img.youtube.com/vi/eJ67XPIBtbY/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/eJ67XPIBtbY?autoplay=1&vq=small"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "Video Pembelajaran Matematika Kelas 2 Tema 5 Subtema 2",
+                description = "Video Pembelajaran Matematika Kelas 2 Tema 5 Subtema 2 Mengubah satuan ukuran panjang Kelas 2 tema 5 subtema 2 pembelajaran 1",
+                imageUrl = "https://img.youtube.com/vi/A9rL5Zs-xIM/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/A9rL5Zs-xIM?autoplay=1&vq=small"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "Video Pembelajaran Matematika Kelas 2 Tema 5 Subtema 3",
+                description = "Video Pembelajaran Matematika Kelas 2 Tema 5 Subtema 3 Perbandingan panjan benda / Mengurutkan panjang benda Kelas 2 tema 5 subtema 3 pembelajaran 1",
+                imageUrl = "https://img.youtube.com/vi/lqMr1G-aaS8/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/lqMr1G-aaS8?autoplay=1&vq=small"
+            )
+        )
+
+        pembelajaranList.add(
+            PembelajaranModels(
+                title = "Video Pembelajaran Matematika Kelas 2 Tema 5 Subtema 4",
+                description = "Video Pembelajaran Matematika Kelas 2 Tema 5 Subtema 4 Menyelesaikan masalah panjang benda Kelas 2 tema 5 subtema 4 pembelajaran 1",
+                imageUrl = "https://img.youtube.com/vi/58Gme5UOsFE/0.jpg",
+                videoUrl = "https://www.youtube.com/embed/58Gme5UOsFE?autoplay=1&vq=small"
+            )
+        )
     }
 
 

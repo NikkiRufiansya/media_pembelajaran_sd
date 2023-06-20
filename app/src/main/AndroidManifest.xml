@@ -11,15 +11,20 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MediaPembelajaran"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".menu.kuis.IntoQuizActivity"
-            android:screenOrientation="landscape"
+            android:name=".menu.pembelajaran.MateriActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
+        <activity
+            android:name=".menu.kuis.IntoQuizActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".menu.kuis.Quiz10Activity"
             android:exported="false"
@@ -58,12 +63,15 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".auth.DaftarActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".auth.LoginAkunActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".auth.SplashScreen"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -73,6 +81,7 @@
         </activity>
         <activity
             android:name=".auth.LoginActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".menu.kuis.Quiz1Activity"
@@ -84,12 +93,15 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".menu.pembelajaran.DetailPembelajaran"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".menu.pembelajaran.PembelajaranActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
     </application>
 

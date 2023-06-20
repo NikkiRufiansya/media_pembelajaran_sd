@@ -23,6 +23,7 @@ import com.example.mediapembelajaran.menu.kuis.Quiz7Activity
 import com.example.mediapembelajaran.menu.kuis.Quiz8Activity
 import com.example.mediapembelajaran.menu.kuis.Quiz9Activity
 import com.example.mediapembelajaran.menu.kuis.QuizActivity
+import com.example.mediapembelajaran.menu.pembelajaran.MateriActivity
 import com.example.mediapembelajaran.menu.pembelajaran.PembelajaranActivity
 import okhttp3.ResponseBody
 import org.json.JSONObject
@@ -46,12 +47,13 @@ class MainActivity : AppCompatActivity() {
         authService = AuthService.create(this)
         connection = Connection(this)
 
-        username = intent.getStringExtra("username").toString()
+
 
         sessionManager = SessionManager(this)
+        username = sessionManager.getUserName()
 
         binding.btnBelajar.setOnClickListener {
-            startActivity(Intent(this, PembelajaranActivity::class.java))
+            startActivity(Intent(this, MateriActivity::class.java))
         }
 
         binding.btnKuis.setOnClickListener {
@@ -63,12 +65,16 @@ class MainActivity : AppCompatActivity() {
             username = ""
         }
 
-        if (username != ""){
-            getProfile()
-        }else{
-            binding.tvBanner.text = "Hai, Selamat Datang \n\n$username"
-            username = "Guest"
-        }
+        Log.d("TAG", "onCreate: " + username)
+
+//        if (username != ""){
+//            getProfile()
+//        }else{
+//            binding.tvBanner.text = "Hai, Selamat Datang \n\n$username"
+//            username = "Guest"
+//        }
+
+        getProfile()
 
 
     }

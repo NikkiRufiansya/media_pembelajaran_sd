@@ -40,6 +40,10 @@ class LoginAkunActivity : AppCompatActivity() {
             login()
         }
 
+        binding.btnRegister.setOnClickListener {
+            startActivity(Intent(this, DaftarActivity::class.java))
+        }
+
     }
 
     fun login(){
@@ -57,6 +61,7 @@ class LoginAkunActivity : AppCompatActivity() {
                                 sessionManager.setIsLogin()
                                 val intent = Intent(this@LoginAkunActivity, MainActivity::class.java)
                                 intent.putExtra("username", binding.etUsername.text.toString())
+                                sessionManager.setUsername(binding.etUsername.text.toString())
                                 startActivity(intent)
                                 Toast.makeText(this@LoginAkunActivity, message, Toast.LENGTH_SHORT).show()
                                 finish()

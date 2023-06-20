@@ -99,6 +99,7 @@ class DaftarActivity : AppCompatActivity() {
                                 sessionManager.setIsLogin()
                                 val intent = Intent(this@DaftarActivity, MainActivity::class.java)
                                 intent.putExtra("username", binding.etUsername.text.toString())
+                                sessionManager.setUsername(binding.etUsername.text.toString())
                                 startActivity(intent)
                                 Toast.makeText(this@DaftarActivity, message.toString(), Toast.LENGTH_SHORT).show()
                                 finish()
