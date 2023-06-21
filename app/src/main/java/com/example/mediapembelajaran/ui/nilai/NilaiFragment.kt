@@ -31,6 +31,9 @@ class NilaiFragment : Fragment() {
     }
 
 
+
+
+
     fun getData(){
         var nilaiList = sqliteHelper.getAllNilai()
 
