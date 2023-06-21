@@ -30,10 +30,6 @@ class NilaiFragment : Fragment() {
         return root
     }
 
-
-
-
-
     fun getData(){
         var nilaiList = sqliteHelper.getAllNilai()
 
