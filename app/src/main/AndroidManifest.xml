@@ -16,6 +16,15 @@
         android:theme="@style/Theme.MediaPembelajaran"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4078600248799035~8566944363"/>
+
+        <activity
+            android:name=".menu.pembelajaran.VideoDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false"
@@ -107,6 +116,8 @@
             android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
+
+
     </application>
 
 </manifest>

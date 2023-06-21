@@ -9,12 +9,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mediapembelajaran.MainActivity
 import com.example.mediapembelajaran.adapter.PembelajaranAdapter
 import com.example.mediapembelajaran.databinding.ActivityPembelajaranBinding
+import com.example.mediapembelajaran.menu.kuis.Quiz1Activity
 import com.example.mediapembelajaran.model.PembelajaranModels
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 
 class PembelajaranActivity : AppCompatActivity() {
     lateinit var binding: ActivityPembelajaranBinding
     lateinit var adapter: PembelajaranAdapter
     var pembelajaranList: ArrayList<PembelajaranModels> = ArrayList()
+    private var mInterstitialAd: InterstitialAd? = null
     var tema = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +32,32 @@ class PembelajaranActivity : AppCompatActivity() {
         Log.d("TAG", "Tema  -->: " + tema)
 
         init(tema)
+        loadIklan()
 
         binding.btnBack.setOnClickListener {
             startActivity(Intent(this, MateriActivity::class.java))
             finish()
         }
+    }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this, MateriActivity::class.java))
+
+
+    }
+
+    fun loadIklan(){
+        var adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                Log.d("TAG", "onAdFailedToLoad: " + adError)
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                mInterstitialAd = interstitialAd
+            }
+        })
     }
 
     private fun init(tema: String){
@@ -54,13 +83,52 @@ class PembelajaranActivity : AppCompatActivity() {
         binding.rvPembelajaran.layoutManager = layoutManager
         adapter = PembelajaranAdapter(this@PembelajaranActivity, pembelajaranList)
         adapter.setOnClick {
-            val intent = Intent(this, DetailPembelajaran::class.java)
-            intent.putExtra("title", it.title)
-            intent.putExtra("description", it.description)
-            intent.putExtra("imageUrl", it.imageUrl)
-            intent.putExtra("videoUrl", it.videoUrl)
-            intent.putExtra("tema", tema)
-            startActivity(intent)
+
+            if(mInterstitialAd != null){
+                mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
+                    override fun onAdClicked() {
+                        // Called when a click is recorded for an ad.
+                        Log.d("TAG", "Ad was clicked.")
+                    }
+
+                    override fun onAdDismissedFullScreenContent() {
+                        // Called when ad is dismissed.
+                        Log.d("TAG", "Ad dismissed fullscreen content.")
+                        //startActivity(Intent(this@IntoQuizActivity, Quiz1Activity::class.java))
+                        val intent = Intent(this@PembelajaranActivity, DetailPembelajaran::class.java)
+                        intent.putExtra("title", it.title)
+                        intent.putExtra("description", it.description)
+                        intent.putExtra("imageUrl", it.imageUrl)
+                        intent.putExtra("videoUrl", it.videoUrl)
+                        intent.putExtra("tema", tema)
+                        startActivity(intent)
+
+                    }
+
+                    override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                        // Called when ad fails to show.
+                        Log.e("TAG", "Ad failed to show fullscreen content.")
+
+                    }
+
+                    override fun onAdImpression() {
+                        // Called when an impression is recorded for an ad.
+                        Log.d("TAG", "Ad recorded an impression.")
+                    }
+
+                    override fun onAdShowedFullScreenContent() {
+                        // Called when ad is shown.
+                        Log.d("TAG", "Ad showed fullscreen content.")
+                    }
+                }
+
+                mInterstitialAd?.show(this)
+            }else{
+                //startActivity(Intent(this@IntoQuizActivity, Quiz1Activity::class.java))
+
+            }
+
+
         }
         binding.rvPembelajaran.adapter = adapter
 
