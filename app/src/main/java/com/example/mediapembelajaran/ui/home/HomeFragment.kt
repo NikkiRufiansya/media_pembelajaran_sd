@@ -17,6 +17,11 @@ import com.example.mediapembelajaran.core.service.AuthService
 import com.example.mediapembelajaran.databinding.FragmentHomeBinding
 import com.example.mediapembelajaran.menu.kuis.IntoQuizActivity
 import com.example.mediapembelajaran.menu.pembelajaran.MateriActivity
+import com.example.mediapembelajaran.menu.pembelajaran.VideoDetailActivity
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
@@ -49,8 +54,44 @@ class HomeFragment : Fragment() {
 
         init()
         getData()
+        initAdmob()
 
         return root
+    }
+
+    fun initAdmob(){
+        MobileAds.initialize(requireContext()) {}
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
+
+        binding.adView.adListener = object: AdListener() {
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+            }
+
+            override fun onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+
+            override fun onAdFailedToLoad(adError : LoadAdError) {
+                // Code to be executed when an ad request fails.
+            }
+
+            override fun onAdImpression() {
+                // Code to be executed when an impression is recorded
+                // for an ad.
+            }
+
+            override fun onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+            }
+        }
     }
 
     fun init(){

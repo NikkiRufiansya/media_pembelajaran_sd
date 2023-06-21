@@ -104,6 +104,19 @@
 
     </androidx.cardview.widget.CardView>
 
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        ads:layout_constraintBottom_toTopOf="@id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
+
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/btn_logout"
         app:cardCornerRadius="@dimen/_5sdp"

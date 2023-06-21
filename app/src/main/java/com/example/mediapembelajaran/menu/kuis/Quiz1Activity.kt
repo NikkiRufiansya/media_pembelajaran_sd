@@ -60,6 +60,10 @@ class Quiz1Activity : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, IntoQuizActivity::class.java))
+    }
     fun drag1() {
         binding.ivDrag1.setOnLongClickListener {
             val clipText = "Terisi"

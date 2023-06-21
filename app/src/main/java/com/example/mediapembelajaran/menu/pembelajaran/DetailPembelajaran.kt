@@ -28,6 +28,13 @@ class DetailPembelajaran : AppCompatActivity() {
         init()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this@DetailPembelajaran, PembelajaranActivity::class.java)
+        intent.putExtra("tema", tema)
+        startActivity(intent)
+    }
+
     private fun initData() {
         title = intent.getStringExtra("title").toString()
         desc = intent.getStringExtra("description").toString()
