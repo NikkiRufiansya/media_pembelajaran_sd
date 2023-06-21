@@ -35,13 +35,7 @@
             android:src="@drawable/ic_kuis_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-        <ImageView
-            android:layout_row="0"
-            android:layout_column="2"
-            android:layout_margin="@dimen/_5sdp"
-            android:src="@drawable/ic_kuis_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+
         <ImageView
             android:layout_row="1"
             android:layout_column="0"
@@ -64,7 +58,7 @@
         android:layout_marginTop="@dimen/_120sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/grid_question_1"
-        android:src="@drawable/minus"
+        android:src="@drawable/baseline_close_24"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"/>
 
@@ -231,5 +225,15 @@
             android:layout_height="@dimen/_25sdp" />
 
     </GridLayout>
+
+    <ImageView
+        android:id="@+id/btn_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="@dimen/_80sdp"
+        android:src="@drawable/next"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

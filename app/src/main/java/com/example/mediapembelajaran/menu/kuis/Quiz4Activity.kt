@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.GridLayout
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.mediapembelajaran.R
 import com.example.mediapembelajaran.databinding.ActivityQuiz4Binding
@@ -39,10 +40,15 @@ class Quiz4Activity : AppCompatActivity() {
 
     var benar = true
     lateinit var initialLayoutParams: ViewGroup.LayoutParams
+    var score = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuiz4Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        score = intent.getIntExtra("score", score)
+
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             val w = window
             w.setFlags(
@@ -831,31 +837,40 @@ class Quiz4Activity : AppCompatActivity() {
                 dropCount8 +
                 dropCount9 +
                 dropCount10
-        val expectedDropCount = 7 // Jumlah drop yang diharapkan
-
+        val expectedDropCount = 3 // Jumlah drop yang diharapkan
+        var scoreHasil = 0
         benar = if (totalDropCount == expectedDropCount && binding.gridAnswerBox?.childCount == expectedDropCount) {
             //Toast.makeText(this, "Jawaban Benar", Toast.LENGTH_SHORT).show()
-            dialogBuilder = AlertDialog.Builder(this)
-            val layoutView: View = layoutInflater.inflate(R.layout.dialog_postive_layout, null)
-            val dialogButton: Button = layoutView.findViewById(R.id.btnDialog)
-            dialogBuilder!!.setView(layoutView)
-            alertDialog = dialogBuilder!!.create()
-            alertDialog!!.window!!.attributes.windowAnimations = R.style.Base_Theme_MediaPembelajaran
-            alertDialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            alertDialog!!.show()
-            dialogButton.setOnClickListener {
-                alertDialog!!.dismiss()
-                startActivity(Intent(this, Quiz5Activity::class.java))
-                finish()
-            }
+            scoreHasil = score + 1
             true
         } else {
+            scoreHasil = intent.getIntExtra("score", 0)
             //Toast.makeText(this, "Jawaban Salah", Toast.LENGTH_SHORT).show()
             false
         }
 
+        binding.btnNext?.setOnClickListener {
+            //Toast.makeText(this, scoreHasil.toString(), Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, Quiz5Activity::class.java)
+            intent.putExtra("score", scoreHasil)
+            startActivity(intent)
+        }
+    }
 
-
+    fun dialogBenar(){
+        dialogBuilder = AlertDialog.Builder(this)
+        val layoutView: View = layoutInflater.inflate(R.layout.dialog_postive_layout, null)
+        val dialogButton: Button = layoutView.findViewById(R.id.btnDialog)
+        dialogBuilder!!.setView(layoutView)
+        alertDialog = dialogBuilder!!.create()
+        alertDialog!!.window!!.attributes.windowAnimations = R.style.Base_Theme_MediaPembelajaran
+        alertDialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        alertDialog!!.show()
+        dialogButton.setOnClickListener {
+            alertDialog!!.dismiss()
+            startActivity(Intent(this, Quiz5Activity::class.java))
+            finish()
+        }
     }
 
     private fun resetLayoutPosition() {

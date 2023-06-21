@@ -48,7 +48,7 @@ class MateriActivity : AppCompatActivity() {
         }
 
         binding.btnBack.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            super.onBackPressed()
             finish()
         }
 

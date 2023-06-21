@@ -61,8 +61,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnLogout.setOnClickListener {
-            sessionManager.logoutUser()
-            username = ""
+//            sessionManager.logoutUser()
+//            username = ""
+            showDialogLogout()
         }
 
         Log.d("TAG", "onCreate: " + username)
@@ -98,7 +99,6 @@ class MainActivity : AppCompatActivity() {
                             Log.d("TAG", "onResponse: " + data)
                         }
 
-
                     }
                 }
 
@@ -130,6 +130,24 @@ class MainActivity : AppCompatActivity() {
         alertDialogBuilder.setPositiveButton("Ya") { dialogInterface: DialogInterface, _: Int ->
             // Menutup aplikasi
             finish()
+        }
+        alertDialogBuilder.setNegativeButton("Tidak") { dialogInterface: DialogInterface, _: Int ->
+            // Mengabaikan tombol "Back"
+            dialogInterface.dismiss()
+            backPressedOnce = false // Reset backPressedOnce saat tombol "Tidak" ditekan
+        }
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
+    }
+
+
+    private fun showDialogLogout(){
+        val alertDialogBuilder = AlertDialog.Builder(this)
+        alertDialogBuilder.setTitle("Logout Akun")
+        alertDialogBuilder.setMessage("Apakah Anda yakin ingin keluar dari Akun?")
+        alertDialogBuilder.setPositiveButton("Ya") { dialogInterface: DialogInterface, _: Int ->
+            // Menutup aplikasi
+            sessionManager.logoutUser()
         }
         alertDialogBuilder.setNegativeButton("Tidak") { dialogInterface: DialogInterface, _: Int ->
             // Mengabaikan tombol "Back"

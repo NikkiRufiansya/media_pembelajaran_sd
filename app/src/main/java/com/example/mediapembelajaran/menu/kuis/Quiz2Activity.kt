@@ -17,10 +17,11 @@ import android.widget.GridLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.mediapembelajaran.R
+import com.example.mediapembelajaran.core.helper.SessionManager
 import com.example.mediapembelajaran.databinding.ActivityQuiz2Binding
 
 class Quiz2Activity : AppCompatActivity() {
-    lateinit var binding : ActivityQuiz2Binding
+    lateinit var binding: ActivityQuiz2Binding
     var dropCount1 = 0
     var dropCount2 = 0
     var dropCount3 = 0
@@ -43,10 +44,12 @@ class Quiz2Activity : AppCompatActivity() {
 
     lateinit var initialLayoutParams: ViewGroup.LayoutParams
 
+    var score = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuiz2Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             val w = window
@@ -55,6 +58,8 @@ class Quiz2Activity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
             )
         }
+        score = intent.getIntExtra("score", 0)
+
 
         initialLayoutParams = binding.root.layoutParams
 
@@ -73,7 +78,7 @@ class Quiz2Activity : AppCompatActivity() {
         drag12()
     }
 
-    fun drag1(){
+    fun drag1() {
         binding.ivDrag1?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -149,7 +154,7 @@ class Quiz2Activity : AppCompatActivity() {
         binding.gridAnswerBox?.setOnDragListener(dragListener)
     }
 
-    fun drag2(){
+    fun drag2() {
         binding.ivDrag2?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -225,7 +230,7 @@ class Quiz2Activity : AppCompatActivity() {
         binding.gridAnswerBox?.setOnDragListener(dragListener)
     }
 
-    fun drag3(){
+    fun drag3() {
         binding.ivDrag3?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -300,7 +305,7 @@ class Quiz2Activity : AppCompatActivity() {
         binding.gridAnswerBox?.setOnDragListener(dragListener)
     }
 
-    fun drag4(){
+    fun drag4() {
         binding.ivDrag4?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -375,7 +380,7 @@ class Quiz2Activity : AppCompatActivity() {
         binding.gridAnswerBox?.setOnDragListener(dragListener)
     }
 
-    fun drag5(){
+    fun drag5() {
         binding.ivDrag5?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -451,7 +456,7 @@ class Quiz2Activity : AppCompatActivity() {
         binding.gridAnswerBox?.setOnDragListener(dragListener)
     }
 
-    fun drag6(){
+    fun drag6() {
         binding.ivDrag6?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -526,7 +531,7 @@ class Quiz2Activity : AppCompatActivity() {
         binding.gridAnswerBox?.setOnDragListener(dragListener)
     }
 
-    fun drag7(){
+    fun drag7() {
         binding.ivDrag7?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -602,7 +607,7 @@ class Quiz2Activity : AppCompatActivity() {
         binding.gridAnswerBox?.setOnDragListener(dragListener)
     }
 
-    fun drag8(){
+    fun drag8() {
         binding.ivDrag8?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -678,7 +683,7 @@ class Quiz2Activity : AppCompatActivity() {
         binding.gridAnswerBox?.setOnDragListener(dragListener)
     }
 
-    fun drag9(){
+    fun drag9() {
         binding.ivDrag9?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -754,7 +759,7 @@ class Quiz2Activity : AppCompatActivity() {
     }
 
 
-    fun drag10(){
+    fun drag10() {
         binding.ivDrag10?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -830,7 +835,7 @@ class Quiz2Activity : AppCompatActivity() {
     }
 
 
-    fun drag11(){
+    fun drag11() {
         binding.ivDrag11?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -905,7 +910,7 @@ class Quiz2Activity : AppCompatActivity() {
         binding.gridAnswerBox?.setOnDragListener(dragListener)
     }
 
-    fun drag12(){
+    fun drag12() {
         binding.ivDrag12?.setOnLongClickListener {
             val clipText = "Terisi"
             val item = ClipData.Item(clipText)
@@ -994,33 +999,46 @@ class Quiz2Activity : AppCompatActivity() {
                 dropCount11 +
                 dropCount12
         val expectedDropCount = 8 // Jumlah drop yang diharapkan
-
-        benar = if (totalDropCount == expectedDropCount && binding.gridAnswerBox?.childCount == expectedDropCount) {
-            //Toast.makeText(this, "Jawaban Benar", Toast.LENGTH_SHORT).show()
-            dialogBuilder = AlertDialog.Builder(this)
-            val layoutView: View = layoutInflater.inflate(R.layout.dialog_postive_layout, null)
-            val dialogButton: Button = layoutView.findViewById(R.id.btnDialog)
-            dialogBuilder!!.setView(layoutView)
-            alertDialog = dialogBuilder!!.create()
-            alertDialog!!.window!!.attributes.windowAnimations = R.style.Base_Theme_MediaPembelajaran
-            alertDialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            alertDialog!!.show()
-            dialogButton.setOnClickListener {
-                alertDialog!!.dismiss()
-                startActivity(Intent(this, Quiz3Activity::class.java))
-                finish()
+        var scoreHasil = 0
+        benar =
+            if (totalDropCount == expectedDropCount && binding.gridAnswerBox?.childCount == expectedDropCount) {
+                //Toast.makeText(this, "Jawaban Benar", Toast.LENGTH_SHORT).show()
+                scoreHasil = score + 1
+                true
+            } else {
+                //Toast.makeText(this, "Jawaban Salah", Toast.LENGTH_SHORT).show()
+                scoreHasil = intent.getIntExtra("score",0)
+                false
             }
-            true
-        } else {
-            //Toast.makeText(this, "Jawaban Salah", Toast.LENGTH_SHORT).show()
-            false
-        }
 
+        binding.btnNext?.setOnClickListener {
+            val intent = Intent(this@Quiz2Activity, Quiz3Activity::class.java)
+            intent.putExtra("score", scoreHasil)
+            startActivity(intent)
+            //Toast.makeText(this, scoreHasil.toString(), Toast.LENGTH_SHORT).show()
+
+        }
 
 
     }
 
     private fun resetLayoutPosition() {
         binding.root.layoutParams = initialLayoutParams
+    }
+
+    fun dialogBenar() {
+        dialogBuilder = AlertDialog.Builder(this)
+        val layoutView: View = layoutInflater.inflate(R.layout.dialog_postive_layout, null)
+        val dialogButton: Button = layoutView.findViewById(R.id.btnDialog)
+        dialogBuilder!!.setView(layoutView)
+        alertDialog = dialogBuilder!!.create()
+        alertDialog!!.window!!.attributes.windowAnimations = R.style.Base_Theme_MediaPembelajaran
+        alertDialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        alertDialog!!.show()
+        dialogButton.setOnClickListener {
+            alertDialog!!.dismiss()
+            startActivity(Intent(this, Quiz3Activity::class.java))
+            finish()
+        }
     }
 }

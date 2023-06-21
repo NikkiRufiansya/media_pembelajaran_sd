@@ -30,6 +30,15 @@ class SessionManager(context: Context) {
         return  sharedPreferences.getString("username", "").toString()
     }
 
+    fun setScore(score: Int){
+        editor.putInt("score", score)
+        editor.commit()
+    }
+
+    fun getScore(): Int{
+        return sharedPreferences.getInt("score", 0)
+    }
+
     fun logoutUser(){
         editor.clear()
         editor.commit()

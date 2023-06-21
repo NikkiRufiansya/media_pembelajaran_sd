@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.mediapembelajaran.HomeActivity
 import com.example.mediapembelajaran.MainActivity
 import com.example.mediapembelajaran.R
 import com.example.mediapembelajaran.core.helper.Connection
@@ -31,6 +32,10 @@ class DaftarActivity : AppCompatActivity() {
         authService = AuthService.create(this)
         sessionManager = SessionManager(this)
         connection = Connection(this)
+
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
 
         binding.etTanggalLahir.setOnClickListener {
             val c = Calendar.getInstance()
@@ -59,16 +64,13 @@ class DaftarActivity : AppCompatActivity() {
                 daftar()
             }
 
-            binding.btnBack1.setOnClickListener {
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
-            }
+
         }
     }
 
     fun daftar() {
         if (connection.isConnectionInternet()) {
-            if (binding.etNis.text.isNotEmpty() &&
+            if (binding.etKelas.text.isNotEmpty() &&
                 binding.etNama.text.isNotEmpty() &&
                 binding.etUsername.text.isNotEmpty() &&
                 binding.etPassword.text.isNotEmpty() &&
@@ -76,7 +78,8 @@ class DaftarActivity : AppCompatActivity() {
                 binding.etTanggalLahir.text.isNotEmpty() &&
                 binding.etUmur.text.isNotEmpty()){
                 var daftar = authService.daftar(
-                    binding.etNis.text.toString(),
+                    "000",
+                    binding.etKelas.text.toString(),
                     binding.etNama.text.toString(),
                     binding.etUsername.text.toString(),
                     binding.etPassword.text.toString(),
@@ -97,7 +100,7 @@ class DaftarActivity : AppCompatActivity() {
                             var message = jsonObject.getString("message")
                             if(status == "success"){
                                 sessionManager.setIsLogin()
-                                val intent = Intent(this@DaftarActivity, MainActivity::class.java)
+                                val intent = Intent(this@DaftarActivity, HomeActivity::class.java)
                                 intent.putExtra("username", binding.etUsername.text.toString())
                                 sessionManager.setUsername(binding.etUsername.text.toString())
                                 startActivity(intent)

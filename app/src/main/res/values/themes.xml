@@ -7,4 +7,13 @@
     </style>
 
     <style name="Theme.MediaPembelajaran" parent="Base.Theme.MediaPembelajaran" />
+
+    <style name="Theme.MediaPembelajaran.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.MediaPembelajaran.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MediaPembelajaran.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

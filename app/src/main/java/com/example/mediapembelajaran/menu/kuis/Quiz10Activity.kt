@@ -14,10 +14,14 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.GridLayout
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import com.example.mediapembelajaran.HomeActivity
 import com.example.mediapembelajaran.MainActivity
 import com.example.mediapembelajaran.R
+import com.example.mediapembelajaran.core.db.SqliteHelper
 import com.example.mediapembelajaran.databinding.ActivityQuiz10Binding
+import com.example.mediapembelajaran.model.NilaiModels
 
 class Quiz10Activity : AppCompatActivity() {
     lateinit var binding : ActivityQuiz10Binding
@@ -34,14 +38,19 @@ class Quiz10Activity : AppCompatActivity() {
 
     var dialogBuilder: AlertDialog.Builder? = null
     var alertDialog: AlertDialog? = null
-
+    var score = 0
+    var scoreHasil = 0
     var benar = true
     lateinit var initialLayoutParams: ViewGroup.LayoutParams
+    lateinit var sqliteHelper: SqliteHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuiz10Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        score = intent.getIntExtra("score", 0)
+        sqliteHelper = SqliteHelper(this)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             val w = window
@@ -834,27 +843,48 @@ class Quiz10Activity : AppCompatActivity() {
 
         benar = if (totalDropCount == expectedDropCount && binding.gridAnswerBox?.childCount == expectedDropCount) {
             //Toast.makeText(this, "Jawaban Benar", Toast.LENGTH_SHORT).show()
-            dialogBuilder = AlertDialog.Builder(this)
-            val layoutView: View = layoutInflater.inflate(R.layout.dialog_finish_layout, null)
-            val dialogButton: Button = layoutView.findViewById(R.id.btnDialog)
-            dialogBuilder!!.setView(layoutView)
-            alertDialog = dialogBuilder!!.create()
-            alertDialog!!.window!!.attributes.windowAnimations = R.style.Base_Theme_MediaPembelajaran
-            alertDialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            alertDialog!!.show()
-            dialogButton.setOnClickListener {
-                alertDialog!!.dismiss()
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
-            }
+            scoreHasil = score + 1
+
             true
         } else {
+            scoreHasil = intent.getIntExtra("score", 0)
             //Toast.makeText(this, "Jawaban Salah", Toast.LENGTH_SHORT).show()
             false
         }
 
+        binding.btnNext?.setOnClickListener {
+            dialogBenar()
+        }
 
 
+
+    }
+    fun dialogBenar(){
+        dialogBuilder = AlertDialog.Builder(this)
+        val layoutView: View = layoutInflater.inflate(R.layout.dialog_finish_layout, null)
+        val dialogButton: Button = layoutView.findViewById(R.id.btn_selesai)
+        val tvhasil: TextView = layoutView.findViewById(R.id.tv_hasil)
+        val tvScore: TextView = layoutView.findViewById(R.id.textView)
+        tvScore.text = "Hore... kamu mendapatkan nilai "+ scoreHasil+0
+        tvhasil.text = "Jawaban Benar adalah $scoreHasil dari 10 soal"
+        dialogBuilder!!.setView(layoutView)
+        alertDialog = dialogBuilder!!.create()
+        alertDialog!!.window!!.attributes.windowAnimations = R.style.Base_Theme_MediaPembelajaran
+        alertDialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        alertDialog!!.show()
+        dialogButton.setOnClickListener {
+            alertDialog!!.dismiss()
+            saveNilai()
+        }
+    }
+
+    fun saveNilai(){
+        val nilai = NilaiModels(nilai = scoreHasil.toString())
+        val status = sqliteHelper.insertServer(nilai)
+        if (status > -1){
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
+        }
     }
 
     private fun resetLayoutPosition() {

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.mediapembelajaran.HomeActivity
 import com.example.mediapembelajaran.MainActivity
 import com.example.mediapembelajaran.R
 import com.example.mediapembelajaran.core.helper.SessionManager
@@ -27,7 +28,7 @@ class SplashScreen : AppCompatActivity() {
 
         Handler().postDelayed({
             if(sessionManager.getIsLogin()){
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, HomeActivity::class.java))
                 finish()
             }else{
                 startActivity(Intent(this, LoginActivity::class.java))

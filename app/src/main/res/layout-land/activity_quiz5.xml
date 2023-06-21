@@ -9,7 +9,7 @@
     
     <GridLayout
         android:id="@+id/grid_question_1"
-        android:layout_marginLeft="@dimen/_80sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_80sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -48,18 +48,39 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/_100sdp"
         app:layout_constraintLeft_toRightOf="@id/grid_question_1"
-        android:src="@drawable/baseline_add_24"
+        android:src="@drawable/baseline_close_24"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"/>
 
-    <ImageView
+    <GridLayout
         android:id="@+id/grid_question_2"
-        android:layout_marginTop="@dimen/_90sdp"
+
+        android:layout_marginTop="@dimen/_80sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/iv_plus"
-        android:src="@drawable/ic_kuis_5"
+        android:rowCount="2"
+        android:columnCount="2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_margin="@dimen/_5sdp"
+            android:src="@drawable/ic_kuis_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </GridLayout>
 
 
     <ImageView
@@ -197,5 +218,15 @@
             android:layout_height="@dimen/_40sdp" />
 
     </GridLayout>
+
+    <ImageView
+        android:id="@+id/btn_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="@dimen/_80sdp"
+        android:src="@drawable/next"
+        android:layout_marginBottom="@dimen/_60sdp"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,7 @@ interface AuthService {
     @FormUrlEncoded
     fun daftar(
         @Field("nis") nis: String,
+        @Field("kelas") kelas: String,
         @Field("nama") nama: String,
         @Field("username") username:String,
         @Field("password") password: String,

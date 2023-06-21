@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.example.mediapembelajaran.HomeActivity
 import com.example.mediapembelajaran.MainActivity
 import com.example.mediapembelajaran.core.helper.Connection
 import com.example.mediapembelajaran.core.helper.SessionManager
@@ -59,7 +60,7 @@ class LoginAkunActivity : AppCompatActivity() {
                             var message = jsonObject.getString("message")
                             if (status == "success"){
                                 sessionManager.setIsLogin()
-                                val intent = Intent(this@LoginAkunActivity, MainActivity::class.java)
+                                val intent = Intent(this@LoginAkunActivity, HomeActivity::class.java)
                                 intent.putExtra("username", binding.etUsername.text.toString())
                                 sessionManager.setUsername(binding.etUsername.text.toString())
                                 startActivity(intent)
